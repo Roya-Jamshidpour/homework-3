@@ -1,26 +1,12 @@
 
-
-window.alert("Click on the button to generate your password!")
-
 //generate button and event listener for when clicked//
-var button = document.querySelector("#generate") 
-.addEventListener("click");
+let button = document.getElementById("#generate") .addEventListener("click" , generatePassword);
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// user inputs
+let yes = "Yes"
+let no = "No"
 
-  passwordText.value = password;
-}
-
-  function generatePassword() {
-    
-  }
-
-   
-
-  //variables
+// variables in characters
 var specialCharacters =[
   '@',
   '%',
@@ -104,10 +90,66 @@ var upperCase = [
   'Z'
 ];
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// choose if you would like to include lowercase letters?
+
+function generatePassword(length, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecialCharacters){
+  // window prompt for yes or no
+  window.prompt("Would you like lowercase letters? Type \"Yes\" or \"No\"")
+  
+  // pick if user wants lowercase //
+
+  // function to choose random lowercase letter
+function randomLowercase(){
+  let index = Math.floor(Math.random() * "lowerCase");
+   return arr[index];
+}
+  function passwordLowercase() {
+    if (userInput === 'Yes') {
+    return console.log(randomLowercase); // if true, moves to next prompt
+  }
+}
+// choose if you would like to include uppercase letters?
+
+// choose if you would like to include numbers?
+
+// choose if you would like to use special characters?
+function random_item()
+{
+  
+return items[Math.floor(Math.random()*items.length)];
+     
+}
+// choose amount of characters to use in password"
+function generatePassword(length, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecialCharacters){
+
+  // window prompt for character length
+  window.prompt("How long would you like your password? Choose between 8 and 128 characters")
+    function passwordLength() {
+      if (length < 8 || length > 128) 
+        return userInput; // if true, displays users input
+       else {
+        return 'Error!' //Displays error message if user inputs anything other than the three parameters listed above
+      
+      }
+    }
+      while (length < 8 || length > 128) {
+      window.prompt("Please choose betwen 8-128 characters");
+
+
+   }
+
+  
+    
+    
 
 
 
-let passwordLength= 10;
-let password = []
-
-
+  
