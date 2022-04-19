@@ -4,21 +4,18 @@ let button = document.getElementById("#generate") .addEventListener("click" , ge
 
 
 // variables in characters
-var specialCharacters = [
-  '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
+var specialCharacters = [ '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
 
 
-  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-var variablesAll = 
-var variablesNoLowercase = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ~!@-#$"
-var variablesNoUppercase = "0123456789abcdefghijklmnopqrstuvwxyz~!@-#$"
-var variablesNoNumbers = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$"
-var variablesNoSpecialCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+var variablesAll = ['@', '%', '+', '\\', '/', "'", '!', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -27,6 +24,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
+generatePassword(getUserLength())
 
 function generatePassword(length, lowercase, uppercase, numbers, specialCharacters){
   
@@ -36,7 +34,7 @@ function generatePassword(length, lowercase, uppercase, numbers, specialCharacte
   
   // choose if you would like to include lowercase letters?
    // window prompt for yes or no
-  window.prompt("Would you like lowercase letters? Type \"Yes\" or \"No\"")
+  let userInput = window.prompt("Would you like lowercase letters? Type \"Yes\" or \"No\"")
   // function to choose random lowercase letter
 function passwordLowercase(){
   if(userInput === "Yes"); 
@@ -75,10 +73,24 @@ function generatePassword(length, passwordLowercase, passwordUppercase, password
 
    }
 
-  
+  let totalCount = userCount
+  lowerCount = totalCount - (Random(1, totalCount - 3))
+  upperCount = totalCount - lowerCount - 
     
     
 
-
+//user chooses password length
+//user opts for lowercase
+//getLowercaseChars(length){
+  let result = ""
+  for(let i=0, i < length, i++){
+    result += random
+  }
+}
+//user opts for uppercase
+//user opts for numbers
+//user opts for specials
+//password is generated from random combination of the above
+//
 
   
