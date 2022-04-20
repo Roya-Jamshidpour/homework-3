@@ -1,7 +1,7 @@
 
 //generate button and event listener for when clicked//
 var button = document.querySelector('#generate');
-button.addEventListener('click', passwordLength());
+button.addEventListener('click', passwordLength);
 
 // empty array to hold results of various user input functions
 const password = []
@@ -32,13 +32,12 @@ function writePassword() {
 function passwordLength() {
   
   var length = prompt("How many characters would you like your password? Enter a number between 8 and 128.");
-  if (length >= 8 || length <= 128)  {
-    console.log(length).upperCase();
+   if (length >= 8 || length <= 128)  {
+    console.log(length);
  } else {
-      window.alert("Please enter a length within established parameters.");
+      window.alert("Please enter a length 8 and 128.")
   }
 }
-passwordLength()
 
 
 // user chooses if they want uppercase letters 
