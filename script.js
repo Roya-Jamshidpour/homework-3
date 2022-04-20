@@ -1,9 +1,10 @@
 
 //generate button and event listener for when clicked//
-let button = document.querySelector("#generate") .addEventListener("click" , passwordLength());
-
+document.querySelector('#generate').addEventListener('click', passwordLength);
+  
 // user chooses password length
 function passwordLength() {
+  
   var length = window.prompt("How many characters would you like your password? Enter a number between 8 and 128.");
   if (length > 8 || length < 128)  {
   } else {
