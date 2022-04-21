@@ -3,10 +3,6 @@
 var button = document.querySelector('#generate');
 button.addEventListener('click', passwordTraits);
 
-// empty array to hold results of various user input functions
-var password = []
-
-
 // variables in characters
 var specialCharacters = [ '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
 
@@ -34,23 +30,23 @@ function passwordTraits() {
   // if user chooses valid length THEN goes to character type choices funtion
   if (passwordLength >= 8 && passwordLength <= 128)  {
       userChoices();
+      console.log(passwordLength)
    } else {
       window.alert("Please enter a length between 8 and 128.");
       
  }
 
-  // strings for user 
+  // prompts to use or not use certain characters in password
 function userChoices() {
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
   var upperCase = window.confirm("Would you like to use uppercase letters?");
   var numbers = window.confirm("Would you like to use numbers?");
   var specialCharacters = window.confirm("Would you like to use special characters?");
 
-// statement to use or not use certain characters in password
-
+  // if none chosen error message occurs
   if (lowerCase !=true && upperCase !=true && numbers !=true && specialCharacters !=true) {
     window.alert("Please choose at least one character type to include!");
-    return;
+    return userChoices();
   }
 
   // string to push user input choices to 
@@ -65,10 +61,21 @@ var completePassword = {
 return completePassword;
 };
 } 
+function randomCharacterChooser() {
+  var index = Math.floor(Math.random()*items.length);
 
 
+}
+ 
+
+// function to combine user choices into password
+function generatePassword() {
 
 
-// user chooses if they want uppercase letters 
+// empty array to hold results of various user input functions
+var password = [];
+var userInputs = [];
+
+}
 
 
