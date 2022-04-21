@@ -1,7 +1,7 @@
 
 //generate button and event listener for when clicked//
 var button = document.querySelector('#generate');
-button.addEventListener('click', passwordLength);
+button.addEventListener('click', passwordTraits);
 
 // empty array to hold results of various user input functions
 var password = []
@@ -26,8 +26,8 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// user chooses password length
-function passwordLength() {
+// user chooses password length and next parameters 
+function passwordTraits() {
   // asks user how long they want password
   var length = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
    
@@ -45,8 +45,23 @@ function passwordLength() {
   var numbers = window.confirm("Would you like to use numbers?");
   var specialCharacters = window.confirm("Would you like to use special characters?");
 
-  if 
+  // string to push user input choices to 
+
+var completePassword = {
+
 }
+
+
+
+return completePassword;
+  // statement to use or not use certain characters in password
+
+  //if (lowerCase !=true && upperCase !=true && numbers !=true && specialCharacters !=true) {
+    //window.alert("Please choose at least one character type to include!");
+    //return;
+  //}
+
+
 
 
 // user chooses if they want uppercase letters 
