@@ -5,8 +5,6 @@ button.addEventListener('click', passwordLength);
 
 // empty array to hold results of various user input functions
 const password = []
- 
-
 
 
 // variables in characters
@@ -20,7 +18,7 @@ var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 
 var variablesAll = ['@', '%', '+', '\\', '/', "'", '!', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-// Write password to the #password input
+// Write password to the #password input field
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -30,12 +28,13 @@ function writePassword() {
 
 // user chooses password length
 function passwordLength() {
-  
-  var length = prompt("How many characters would you like your password? Enter a number between 8 and 128.");
-   if (length >= 8 || length <= 128)  {
+  // asks user how long they want password
+  var length = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
+   
+  if (length >= 8 && length <= 128)  {
     console.log(length);
  } else {
-      window.alert("Please enter a length 8 and 128.")
+      window.alert("Please enter a length between 8 and 128.");
   }
 }
 
