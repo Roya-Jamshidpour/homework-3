@@ -4,7 +4,7 @@ var button = document.querySelector('#generate');
 button.addEventListener('click', passwordLength);
 
 // empty array to hold results of various user input functions
-const password = []
+var password = []
 
 
 // variables in characters
@@ -32,10 +32,20 @@ function passwordLength() {
   var length = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
    
   if (length >= 8 && length <= 128)  {
-    console.log(length);
+    return;
  } else {
       window.alert("Please enter a length between 8 and 128.");
+      return;
   }
+
+  // strings for user 
+ }
+  var lowerCase = window.confirm("Would you like to use lowercase letters?");
+  var upperCase = window.confirm("Would you like to use uppercase letters?");
+  var numbers = window.confirm("Would you like to use numbers?");
+  var specialCharacters = window.confirm("Would you like to use special characters?");
+
+  if 
 }
 
 
