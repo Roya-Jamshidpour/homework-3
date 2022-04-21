@@ -29,9 +29,9 @@ function writePassword() {
 // user chooses password length and next parameters 
 function passwordTraits() {
   // asks user how long they want password
-  var length = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
+  var passwordLength = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
    
-  if (length >= 8 && length <= 128)  {
+  if (passwordLength >= 8 && passwordLength <= 128)  {
     return;
  } else {
       window.alert("Please enter a length between 8 and 128.");
@@ -48,8 +48,8 @@ function passwordTraits() {
   // string to push user input choices to 
 
 var completePassword = {
-
-}
+    length: passwordLength, lowerC: lowerCase, upperC: upperCase, numericNum: numbers, special: specialCharacters,
+};
 
 
 
