@@ -30,36 +30,41 @@ function writePassword() {
 function passwordTraits() {
   // asks user how long they want password
   var passwordLength = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
-   
+  
+  // if user chooses valid length THEN goes to character type choices funtion
   if (passwordLength >= 8 && passwordLength <= 128)  {
-    return;
- } else {
+      userChoices();
+   } else {
       window.alert("Please enter a length between 8 and 128.");
-      return;
-  }
+      
+ }
 
   // strings for user 
- }
+function userChoices() {
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
   var upperCase = window.confirm("Would you like to use uppercase letters?");
   var numbers = window.confirm("Would you like to use numbers?");
   var specialCharacters = window.confirm("Would you like to use special characters?");
 
-  // string to push user input choices to 
+// statement to use or not use certain characters in password
 
+  if (lowerCase !=true && upperCase !=true && numbers !=true && specialCharacters !=true) {
+    window.alert("Please choose at least one character type to include!");
+    return;
+  }
+
+  // string to push user input choices to 
 var completePassword = {
-    length: passwordLength, lowerC: lowerCase, upperC: upperCase, numericNum: numbers, special: specialCharacters,
+    length: passwordLength, 
+    lowerC: lowerCase, 
+    upperC: upperCase, 
+    numericNum: numbers, 
+    special: specialCharacters,
 };
 
-
-
 return completePassword;
-  // statement to use or not use certain characters in password
-
-  //if (lowerCase !=true && upperCase !=true && numbers !=true && specialCharacters !=true) {
-    //window.alert("Please choose at least one character type to include!");
-    //return;
-  //}
+};
+} 
 
 
 
