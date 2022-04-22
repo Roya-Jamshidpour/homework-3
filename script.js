@@ -39,6 +39,7 @@ function passwordTraits() {
   // prompts to use or not use certain characters in password
 function userChoices() {
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
+  //if true the push it to empty password string
   var upperCase = window.confirm("Would you like to use uppercase letters?");
   var numbers = window.confirm("Would you like to use numbers?");
   var specialCharacters = window.confirm("Would you like to use special characters?");
