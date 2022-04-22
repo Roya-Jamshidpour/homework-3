@@ -3,24 +3,14 @@
 var button = document.querySelector('#generate');
 button.addEventListener('click', passwordTraits);
 
-// variables in characters
-var specialCharacters = [ '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
+// variables of characters
+var specialCharCharacters = [ '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
 
-var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numberCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var lowerCaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
-var variablesAll = ['@', '%', '+', '\\', '/', "'", '!', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
-// Write password to the #password input field
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
+var upperCaseCharacters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 // user chooses password length and next parameters 
 function passwordTraits() {
@@ -50,7 +40,7 @@ function userChoices() {
     return userChoices();
   }
 
-  // string to push user input choices to 
+  // key value pairs of input turned into data 
 var completePassword = {
     length: passwordLength, 
     lowerC: lowerCase, 
@@ -62,21 +52,51 @@ var completePassword = {
 return completePassword;
 };
 } 
-function randomCharacterChooser() {
-  var index = Math.floor(Math.random()*items.length);
+function randomCharacterChooser(array) {
+ let index = upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)]  
 
 
 }
  
 
-// function to combine user choices into password
+// function to combine user choices into creating a password
 function generatePassword() {
 
+  var traits = userChoices();
+  // final empty string of the combines chosen traits at proper chosen length
+  var password = [];
+  // empty string to push user chosen traits into
+  var allUserInputs = [];
 
-// empty array to hold results of various user input functions
-var password = [];
-var userInputs = [];
+  // if user chooses lowercase, then push whole list to 
+  if (traits.lowerC === true) {
+    console.log(lowerCaseCharacters)
+    allUserInputs.push(...lowerCaseCharacters)
+  }
 
+// if user chooses uppercase, then push whole list to 
+if (traits.upperC === true) {
+  console.log(upperCaseCharacters)
+  allUserInputs.push(...upperCaseCharacters)
+}
+
+// if user chooses numbers, then push whole list to 
+if (traits.numericNum === true) {
+  console.log(numberCharacters)
+  allUserInputs.push(...numberCharacters)
+}
+
+// if user chooses numbers, then push whole list to 
+if (traits.specialCharCharacters === true) {
+  console.log(specialCharCharacters)
+  allUserInputs.push(...specialCharCharacters)
 }
 
 
+// Write completed password to the #password input field
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
