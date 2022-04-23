@@ -69,7 +69,7 @@ function generatePassword() {
   
   }
   console.log(password)
-  return password;
+  return alert("Here is your new password:  " + password);
 
  }
 
