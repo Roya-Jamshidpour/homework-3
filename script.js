@@ -61,9 +61,6 @@ function generatePassword() {
 
   console.log(allUserInputs)
 
-  var password = allUserInputs[Math.floor(Math.random() * allUserInputs.passwordLength)]
-  for (let i = 0; i < passwordLength; i++) {
-    writePassword()
   }
   
   // Write completed password to the #password input field
@@ -73,4 +70,4 @@ function writePassword() {
 
   passwordText.value = password;
   }
-  }
+  
