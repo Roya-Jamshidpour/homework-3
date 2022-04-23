@@ -1,7 +1,7 @@
 
 //generate button and event listener for when clicked//
 var button = document.querySelector('#generate');
-button.addEventListener('click', passwordTraits);
+button.addEventListener('click', generatePassword);
 
 // variables of characters
 var specialCharCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
@@ -15,8 +15,9 @@ var upperCaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'
 // empty string to push user chosen traits into
 var allUserInputs = [];
 
-// user chooses password length and next parameters 
-function passwordTraits() {
+  // prompts to use or not use certain characters in password then generates password based on those choices
+  function generatePassword() { 
+
   // asks user how long they want password
   var passwordLength = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
 
@@ -24,15 +25,11 @@ function passwordTraits() {
   if (passwordLength >= 8 && passwordLength <= 128) {
     console.log(passwordLength)
     // next function called
-    userChoices();
 
+    // error message if length is not within acceptable range
   } else {
     window.alert("Please enter a length between 8 and 128.");
 
-  }
-
-  // prompts to use or not use certain characters in password
-  function userChoices() {
     var lowerCase = window.confirm("Would you like to use lowercase letters?");
     console.log(lowerCase)
     //if true the push it to empty password string
@@ -42,7 +39,7 @@ function passwordTraits() {
     console.log(numbers)
     var specialCharacters = window.confirm("Would you like to use special characters?");
     console.log(specialCharacters)
-    // next function called
+    // next function called to generate password based on user choices
     generatePassword();
 
     // if none chosen error message occurs
@@ -50,43 +47,41 @@ function passwordTraits() {
       window.alert("Please choose at least one character type to include!");
     }
     // key value pairs of user input choices turned into data 
-  var completePasswordChoices = {
-    length: passwordLength,
-    lowerC: lowerCase,
-    upperC: upperCase,
-    numericNum: numbers,
-    special: specialCharacters,
-  };
-  return completePasswordChoices;
-  
-}
-  
-
-// function to combine user choices into creating a password
-function generatePassword() {
-
+    var completePasswordChoices = {
+      length: passwordLength,
+      lowerC: lowerCase,
+      upperC: upperCase,
+      numericNum: numbers,
+      special: specialCharacters,
+    };
+  }
   // array of all user choices in data form
   var traits = completePasswordChoices;
 
-  // if user chooses lowercase, then push whole list to 
+  // empty array to push all chosen user inputs too
+  var allUserInputs = []
+
+  var password = []
+
+  // if user chooses lowercase, then push whole list to empty array
   if (traits.lowerC === true) {
     console.log(lowerCaseCharacters)
     allUserInputs.push(...lowerCaseCharacters);
   }
 
-  // if user chooses uppercase, then push whole list to 
+  // if user chooses uppercase, then push whole list to empty array
   if (traits.upperC === true) {
     console.log(upperCaseCharacters)
     allUserInputs.push(...upperCaseCharacters);
   }
 
-  // if user chooses numbers, then push whole list to 
+  // if user chooses numbers, then push whole list to empty array
   if (traits.numericNum === true) {
     console.log(numberCharacters)
     allUserInputs.push(...numberCharacters);
   }
 
-  // if user chooses numbers, then push whole list to 
+  // if user chooses numbers, then push whole list to empty array
   if (traits.specialCharCharacters === true) {
     console.log(specialCharCharacters)
     allUserInputs.push(...specialCharCharacters);
@@ -109,5 +104,4 @@ function randomCharacterChooser() {
 
     passwordText.value = password;
   }
-}
 }
