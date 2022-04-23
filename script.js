@@ -12,9 +12,6 @@ var lowerCaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
 
 var upperCaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-// empty string to push user chosen traits into
-var allUserInputs = [];
-
   // prompts to use or not use certain characters in password then generates password based on those choices
   function generatePassword() { 
 
@@ -40,7 +37,6 @@ var allUserInputs = [];
     var specialCharacters = window.confirm("Would you like to use special characters?");
     console.log(specialCharacters)
     // next function called to generate password based on user choices
-    generatePassword();
 
     // if none chosen error message occurs
     if (lowerCase != true && upperCase != true && numbers != true && specialCharacters != true) {
@@ -60,7 +56,7 @@ var allUserInputs = [];
 
   // empty array to push all chosen user inputs too
   var allUserInputs = []
-
+// empty array for final user inputs at desired length to be pushed to
   var password = []
 
   // if user chooses lowercase, then push whole list to empty array
