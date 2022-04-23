@@ -35,7 +35,7 @@ function generatePassword() {
 
   // if none chosen error message occurs
   window.alert("Please choose at least one character type to include!");
-}
+
 // key value pairs of user input choices turned into data 
 // var completePasswordChoices = {
 //  length: passwordLength,
@@ -75,10 +75,11 @@ if (numberCharacters === true) {
 if (specialCharCharacters === true) {
   console.log(specialCharCharacters)
   allUserInputs.push(...specialCharCharacters);
-  console.log(allUserInputs)
-}
-randomCharacterChooser();
 
+  
+}
+console.log(allUserInputs)
+}
 
 // function to randomly choose characters from allUserInputs string within established password length limit
 function randomCharacterChooser() {
