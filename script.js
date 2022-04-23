@@ -60,24 +60,25 @@ function generatePassword() {
 
     userInputs.push(...specialCharCharacters);
   }
+  
   console.log(userInputs)
 
   // randomly chooses characters from combined string and makes it chosen length
-   var password = userInputs[Math.floor(Math.random() * userInputs.passwordLength)]
-  for (let i = 0; i < passwordLength; i++) {
-    console.log(password)
-  // make array a string so it has no commas
-    return password.join("");
-  }
-  }
-  
-  // need to call writePassword()
+   // var password = allUserInputs[Math.floor(Math.random() * allUserInputs.passwordLength)]
+   // for (let i = 0; i < passwordLength; i++) {
+    //  password.join(' ');
+//return prompt(password)
 
-// Write completed password to the #password input field
-function writePassword() {
-  password = generatePassword();
-  var passwordText = document.querySelector("#password");
+ }
 
-  passwordText.value = password;
-}
 
+    // need to call writePassword()
+
+    // Write completed password to the #password input field
+    function writePassword() {
+      password = generatePassword();
+      var passwordText = document.querySelector("#password");
+
+      passwordText.value = password;
+    
+    }
