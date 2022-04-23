@@ -13,7 +13,7 @@ var lowerCaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
 var upperCaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 // empty string for user inputs at chosen length to be pushed into 
-var password = []
+var password = ''
 
 // prompts to use or not use certain characters in password then generates password based on those choices
 function generatePassword() {
@@ -63,11 +63,13 @@ function generatePassword() {
   
   console.log(userInputs)
 
-  // randomly chooses characters from combined string and makes it chosen length
-   // var password = allUserInputs[Math.floor(Math.random() * allUserInputs.passwordLength)]
-   // for (let i = 0; i < passwordLength; i++) {
-    //  password.join(' ');
-//return prompt(password)
+  
+  for (let i = 0; i < passwordLength; i++) {
+  password += userInputs[Math.floor(Math.random() * userInputs.length)];
+  
+  }
+  console.log(password)
+  return password;
 
  }
 
@@ -79,6 +81,6 @@ function generatePassword() {
       password = generatePassword();
       var passwordText = document.querySelector("#password");
 
-      passwordText.value = password;
+      passwordText.textContent = password;
     
     }
