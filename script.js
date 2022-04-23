@@ -57,7 +57,7 @@ function passwordTraits() {
     numericNum: numbers,
     special: specialCharacters,
   };
-  return console.log(completePasswordChoices);
+  return completePasswordChoices;
   
 }
   
@@ -96,8 +96,8 @@ function generatePassword() {
 
 // function to randomly choose characters from allUserInputs string within established password length limit
 function randomCharacterChooser() {
-  var password = allUserInputs[Math.floor(Math.random() * allUserInputs.length)]
-  for (let i = 0; i < traits.length; i++) {
+  var password = allUserInputs[Math.floor(Math.random() * allUserInputs.passwordLength)]
+  for (let i = 0; i < traits.passwordLength; i++) {
 
   }
 
