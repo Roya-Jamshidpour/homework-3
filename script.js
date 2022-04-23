@@ -3,7 +3,7 @@
 var button = document.querySelector('#generate');
 button.addEventListener('click', writePassword);
 
-// variables of characters
+// global variables of characters
 var specialCharCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_'];
 
 var numberCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -11,6 +11,9 @@ var numberCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowerCaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upperCaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+// empty string for user inputs at chosen length to be pushed into 
+var password = []
 
 // prompts to use or not use certain characters in password then generates password based on those choices
 function generatePassword() {
@@ -20,7 +23,7 @@ function generatePassword() {
 
 
   console.log(passwordLength)
-
+  // prompts for user to choose desired character types for password
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
   console.log(lowerCase)
   // if true the push it to empty password string
@@ -31,43 +34,50 @@ function generatePassword() {
   var specialCharacters = window.confirm("Would you like to use special characters?");
   console.log(specialCharacters)
 
-  var allUserInputs = []
-  // empty array for final user inputs at desired length to be pushed to
-  var password = []
+  // empty array for final all user inputs at desired length to be pushed to
+  var userInputs = []
 
   // if user chooses lowercase, then push whole list to empty array
   if (lowerCase === true) {
-      console.log(lowerCaseCharacters)
-      allUserInputs.push(... lowerCaseCharacters);
+
+    userInputs.push(...lowerCaseCharacters);
   }
 
   // if user chooses uppercase, then push whole list to empty array
   if (upperCase === true) {
-      console.log(upperCaseCharacters)
-      allUserInputs.push(... upperCaseCharacters);
+
+    userInputs.push(...upperCaseCharacters);
   }
 
   // if user chooses numbers, then push whole list to empty array
   if (numbers === true) {
-      console.log(numberCharacters)
-      allUserInputs.push(... numberCharacters);
+
+    userInputs.push(...numberCharacters);
   }
 
   // if user chooses numbers, then push whole list to empty array
   if (specialCharacters === true) {
-      console.log(specialCharCharacters)
-      allUserInputs.push(... specialCharCharacters);
+
+    userInputs.push(...specialCharCharacters);
   }
+  console.log(userInputs)
 
-  console.log(allUserInputs)
-
+  // randomly chooses characters from combined string and makes it chosen length
+   var password = userInputs[Math.floor(Math.random() * userInputs.passwordLength)]
+  for (let i = 0; i < passwordLength; i++) {
+    console.log(password)
+  // make array a string so it has no commas
+    return password.join("");
+  }
   }
   
-  // Write completed password to the #password input field
+  // need to call writePassword()
+
+// Write completed password to the #password input field
 function writePassword() {
-  var password = generatePassword();
+  password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  }
-  
+}
+
