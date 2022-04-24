@@ -16,7 +16,7 @@ var password = ''
 function generatePassword() {
   // asks user how long they want password
   var passwordLength = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
-
+// if a number outside of range is chosen error occurs
   while (passwordLength < 8 || passwordLength > 128) {
     alert("Only numbers between 8-128 please");
      return passwordLength;
@@ -33,7 +33,12 @@ function generatePassword() {
   console.log(numbers)
   var specialCharacters = window.confirm("Would you like to use special characters?");
   console.log(specialCharacters)
-  // empty array for final all user inputs at desired length to be pushed to
+  //I could not figure out how to make this work without messing with the efficacy of the generator
+  //while (lowerCase === false && upperCase === false && numbers === false && specialCharacters === false) {
+    //alert("Silly you, choose at least one type of character!");
+     //return lowerCase;
+     
+  // empty array for final all arrays from user choices to be pushed to
   var userInputs = []
   // if user chooses lowercase, then push whole list to empty array
   if (lowerCase === true) {
