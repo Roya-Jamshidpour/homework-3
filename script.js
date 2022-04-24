@@ -16,6 +16,12 @@ var password = ''
 function generatePassword() {
   // asks user how long they want password
   var passwordLength = Number(prompt("How many characters would you like your password? Enter a number between 8 and 128."));
+
+  while (passwordLength < 8 || passwordLength > 128) {
+    alert("Only numbers between 8-128 please");
+     return passwordLength;
+  }
+
   console.log(passwordLength)
   // prompts for user to choose desired character types for password
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
@@ -45,16 +51,18 @@ function generatePassword() {
   if (specialCharacters === true) {
     userInputs.push(...specialCharCharacters);
   }
-
+  // password characters randomly chosen from string and put together at desired length
   for (let i = 0; i < passwordLength; i++) {
   password += userInputs[Math.floor(Math.random() * userInputs.length)];
 
   }
+  // displays password in alert window
   console.log(password)
   alert("Here is your new password:  " + password)
     return password;
   
 }
+    // I could not get this function to display the text in the html field
     // Write completed password to the #password input field
     function writePassword() {
     password = generatePassword();
