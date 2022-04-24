@@ -67,7 +67,7 @@ function generatePassword() {
     return password;
   
 }
-    // I could not get this function to display the text in the html field
+
     // Write completed password to the #password input field
     function writePassword() {
     password = generatePassword();
